@@ -1,5 +1,5 @@
 class City(object):
-    #Arguments:
+    # Arguments:
     #   ctname - city name
     #   ctpop - city population
     #   cntrname - country name

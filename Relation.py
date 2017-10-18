@@ -1,6 +1,4 @@
 
-from Countries import Countries
-from Cities import Cities
 
 class Relation(object):
     def __init__(self):
@@ -9,9 +7,10 @@ class Relation(object):
         self.ctDB = []
         self.ctid = 0
         self.lastid = 0
+        self.sortedDB = []
 
     def add(self, cntrid, ctid, Countries, Cities):
-        if cntrid > Countries.lastid or cntrid < 0 :
+        if cntrid > Countries.lastid or cntrid < 0:
             print("No such country's ID")
             return 1
         else:
@@ -34,40 +33,69 @@ class Relation(object):
         if ctid > Cities.lastid or ctid < 0:
             print("No such City's ID")
         else:
-            self.ctDB[ctid].remove()
-            self.cntrDB[ctid].remove()
+            #del self.cntrDB[ctid]
+            #del self.ctDB[ctid]
+            self.cntrDB.pop(ctid)
+            self.ctDB.pop(ctid)
             self.lastid -= 1
-            while ctid < self.lastid:
-                self.ctDB[ctid] = self.ctDB[ctid+1]
-                self.cntrDB[ctid] = self.cntrDB[ctid+1]
-                ctid += 1
+
 
     def cntrdelete(self, cntrid, Countries, Cities):
-        if cntrid > Countries.lastid or cntrid < 0 :
-            print("No such country's ID")
-        else:
-            i = 0
-            while i < len(self.cntrDB):
-                if self.cntrDB[i] == cntrid:
-                    self.cntrDB[i].remove()
-                    self.ctDB[i].remove()
-                    self.lastid -= 1
-                    i += 1
-            i = 0
-            while cntrid < len(self.cntrDB)-1:
-                self.cntrDB[i] = self.cntrDB[i+1]
-                self.ctDB[i] = self.ctDB[i+1]
-                cntrid += 1
+        print("Don't do this!")
+#        if cntrid > Countries.lastid or cntrid < 0:
+#            print("No such country's ID")
+#        else:
+#            i = 0
+#            while i < self.lastid:
+#                if self.cntrDB[i] == cntrid:
+#                    print(str(i))
+#                    print(self.ctDB[i])
+#                    self.ctDB.pop(self.ctDB[i])
+#                    #self.ctDB.pop(self.ctDB[i])
+#                    self.lastid -= 1
+#                    self.cntrDB.remove(cntrid)
+#                   self.ctDB.remove(self.ctDB[i])
+ #               i += 1
+  #          self.cntrDB.pop(cntrid)
 
-    def idinfo(self, ID):
-        Countries.idinfo(self.cntrDB[ID])
+    def idinfo(self, ID, Countries, Cities, ER):
+
+        Countries.idinfo(ER.cntrDB[ID])
+        Cities.idinfo(ER.ctDB[ID])
 
     def relinfo(self, Countries, Cities):
         i = 0
         while i < self.lastid:
-            print(str(i+1))
+            print(str(i + 1))
             Countries.idinfo(self.cntrDB[i])
             Cities.idinfo(self.ctDB[i])
+            i += 1
+
+    def sort(self, Countries, Cities):
+        CTID = []
+        CNTRID = []
+        count = 1
+        i = 0
+
+        while i < Cities.lastid:
+            if Cities.DB[i].pop >= 1000000:
+                CTID.append(i)
+
+            i += 1
+
+
+        i = 0
+        while i < len(CTID):
+            CNTRID.append(self.cntrDB[CTID[i]])
+            i += 1
+        i = 0
+
+        while i < len(CNTRID):
+            ans = CNTRID.count(i)
+
+
+            if ans >= 3:
+                Countries.idinfo(i)
             i += 1
 
 
