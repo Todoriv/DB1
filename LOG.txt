@@ -1,0 +1,94 @@
+E:\Python\python.exe C:/Users/lenovo/PycharmProjects/DB/MENU.py
+
+           1.Add a relation
+           2.Delete a country
+           3.Delete a city
+           4.Watch a relation by ID
+           5.Watch a full relation
+           6.Watch sorting result
+           7.Exit
+           
+Hit the key
+5
+1
+Ukraine
+Kyiv 100000000
+2
+Ukraine
+Chernihiv 1000000000
+3
+Ukraine
+Zhashkiv 100000000
+4
+Mongolia
+Ulan-Bator 100
+5
+Romania
+Gurguleshti 10009999999
+6
+Romania
+Bucharest 10000999999
+7
+Romania
+LVIV 199999999999
+Press something6
+invalid Number
+
+           1.Add a relation
+           2.Delete a country
+           3.Delete a city
+           4.Watch a relation by ID
+           5.Watch a full relation
+           6.Watch sorting result
+           7.Exit
+           
+Hit the key
+6
+Ukraine
+Romania
+Press something3
+invalid Number
+
+           1.Add a relation
+           2.Delete a country
+           3.Delete a city
+           4.Watch a relation by ID
+           5.Watch a full relation
+           6.Watch sorting result
+           7.Exit
+           
+Hit the key
+3
+Write city's ID
+5
+invalid Number
+
+           1.Add a relation
+           2.Delete a country
+           3.Delete a city
+           4.Watch a relation by ID
+           5.Watch a full relation
+           6.Watch sorting result
+           7.Exit
+           
+Hit the key
+5
+1
+Ukraine
+Kyiv 100000000
+2
+Ukraine
+Chernihiv 1000000000
+3
+Ukraine
+Zhashkiv 100000000
+4
+Mongolia
+Ulan-Bator 100
+5
+Romania
+Gurguleshti 10009999999
+6
+Romania
+LVIV 199999999999
+Press something
